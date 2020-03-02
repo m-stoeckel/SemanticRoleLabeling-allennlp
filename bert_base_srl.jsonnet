@@ -1,7 +1,8 @@
 {
 
     "dataset_reader": {
-        "type": "conll2009_srl"
+        "type": "conll2009_srl",
+        "bert_model_name": "bert-base-multilingual-cased"
       },
 
     "iterator": {
@@ -21,7 +22,7 @@
 
     "trainer": {
         "optimizer": {
-            "type": "huggingface_adamw",
+            "type": "bert_adam",
             "lr": 5e-5,
             "correct_bias": false,
             "weight_decay": 0.01,
@@ -40,7 +41,7 @@
         "validation_metric": "+f1-measure-overall",
         "num_serialized_models_to_keep": 2,
         "should_log_learning_rate": true,
-        "cuda_device": 0,
+        "cuda_device": "0,1"
     },
 
 }
