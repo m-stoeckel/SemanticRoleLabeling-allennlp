@@ -7,7 +7,7 @@
 
     "iterator": {
         "type": "bucket",
-        "batch_size": 32,
+        "batch_size": 16,
         "sorting_keys": [["tokens", "num_tokens"]]
     },
 
@@ -34,7 +34,7 @@
         "learning_rate_scheduler": {
             "type": "slanted_triangular",
             "num_epochs": 15,
-            "num_steps_per_epoch": 8829,
+            "num_steps_per_epoch": 1125,
         },
         "grad_norm": 1.0,
         "num_epochs": 15,
