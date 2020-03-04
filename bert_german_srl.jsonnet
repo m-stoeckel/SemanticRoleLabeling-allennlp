@@ -1,7 +1,7 @@
 {
 	"dataset_reader": {
 		"type": "conll2009_srl",
-		"bert_model_name": "bert-base-multilingual-cased"
+		"bert_model_name": "bert-base-german-cased"
 	},
 	//	"iterator": {
 	//		"type": "bucket",
@@ -24,7 +24,7 @@
 	"model": {
 		"type": "srl_bert",
 		"embedding_dropout": 0.1,
-		"bert_model": "bert-base-multilingual-cased"
+		"bert_model": "bert-base-german-cased",
 	},
 	"distributed": {
 		"cuda_devices": [
@@ -49,16 +49,17 @@
 					{
 						"weight_decay": 0.0
 					}
-				]
-			]
+				],
+			],
 		},
 		"learning_rate_scheduler": {
 			"type": "slanted_triangular",
-			"num_epochs": 15,
+			"num_epochs": 25,
 			"num_steps_per_epoch": 1125
 		},
+		"num_epochs": 25,
+		"patience": 2,
 		"grad_norm": 1.0,
-		"num_epochs": 15,
 		"validation_metric": "+f1-measure-overall",
 		"checkpointer": {
 			"num_serialized_models_to_keep": 2,
